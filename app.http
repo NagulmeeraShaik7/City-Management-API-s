@@ -1,0 +1,55 @@
+POST http://localhost:3000/api/cities 
+Content-Type: application/json 
+
+{
+  "name": "Los Angeles",
+  "population": 4000000,
+  "country": "United States",
+  "latitude": 34.0522,
+  "longitude": -118.2437
+}
+
+  
+#### 
+
+GET http://localhost:3000/api/cities 
+### 
+
+//pagination 
+GET http://localhost:3000/api/cities?page=1&limit=10
+### 
+
+GET http://localhost:3000/api/cities?page=2&limit=5
+### 
+
+//filtering 
+GET http://localhost:3000/api/cities?filter={"country":"USA"} 
+### 
+
+GET http://localhost:3000/api/cities?sort=name DESC
+
+#### 
+
+//projection 
+GET http://localhost:3000/api/cities?projection=name,population 
+#### 
+
+
+//combine all conditions 
+GET http://localhost:3000/api/cities?page=1&limit=5&filter={"country":"USA"}&sort=population DESC&search=New&projection=name,population
+#### 
+
+PUT http://localhost:3000/api/cities/1
+Content-Type: application/json
+
+{
+  "name": "New York",
+  "population": 1500000,
+  "country": "USA",
+  "latitude": 34.0522,
+  "longitude": -118.2437
+}
+###
+
+DELETE http://localhost:3000/api/cities/1
+####
