@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "a371167c-8aff-4f47-9da2-687aca75b08d",
+		"name": "City Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37920178",
+		"_collection_link": "https://gold-flare-287801.postman.co/workspace/New-Team-Workspace~fc4da7bc-534d-4f0d-9195-06630b27f8d9/collection/37920178-a371167c-8aff-4f47-9da2-687aca75b08d?action=share&source=collection_link&creator=37920178"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create City API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/cities?name=Delhi&population=8419600&country=India&latitude=40.7128&longitude=-74.0060",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Delhi"
+						},
+						{
+							"key": "population",
+							"value": "8419600"
+						},
+						{
+							"key": "country",
+							"value": "India"
+						},
+						{
+							"key": "latitude",
+							"value": "40.7128"
+						},
+						{
+							"key": "longitude",
+							"value": "-74.0060"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all Cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all Cities with Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities?page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get city by Filtering",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities?filter={\"country\":\"India\"} ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "filter",
+							"value": "{\"country\":\"India\"} "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cities by Sorted Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities?sort=name DESC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "name DESC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cities by Projection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities?projection=name,population",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "name,population"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get cities by All conditions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities?page=2&limit=5&filter={\"country\":\"India\"}&sort=population DESC&search=Ind&projection=name,population",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "filter",
+							"value": "{\"country\":\"India\"}"
+						},
+						{
+							"key": "sort",
+							"value": "population DESC"
+						},
+						{
+							"key": "search",
+							"value": "Ind"
+						},
+						{
+							"key": "projection",
+							"value": "name,population"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the data by Id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the data by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/cities/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cities",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
